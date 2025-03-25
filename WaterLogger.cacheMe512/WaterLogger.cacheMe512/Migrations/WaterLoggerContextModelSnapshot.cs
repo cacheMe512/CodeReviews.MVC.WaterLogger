@@ -33,8 +33,8 @@ namespace WaterLogger.cacheMe512.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Quantity")
+                        .HasColumnType("decimal(5, 2)");
 
                     b.HasKey("Id");
 

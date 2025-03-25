@@ -12,7 +12,7 @@ using WaterLogger.cacheMe512.Data;
 namespace WaterLogger.cacheMe512.Migrations
 {
     [DbContext(typeof(WaterLoggerContext))]
-    [Migration("20250325124348_InitialCreate")]
+    [Migration("20250325193134_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -36,8 +36,8 @@ namespace WaterLogger.cacheMe512.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Quantity")
+                        .HasColumnType("decimal(5, 2)");
 
                     b.HasKey("Id");
 

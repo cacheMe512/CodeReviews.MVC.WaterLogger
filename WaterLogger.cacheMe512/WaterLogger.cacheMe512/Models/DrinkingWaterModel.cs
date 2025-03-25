@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WaterLogger.cacheMe512.Models;
 
@@ -9,6 +10,7 @@ public class DrinkingWaterModel
     [DisplayFormat(DataFormatString = "{0:dd-MMM-yy}", ApplyFormatInEditMode = true)]
     public DateTime Date { get; set; }
 
-    [Range(0, Int32.MaxValue, ErrorMessage = "Value for {0} must be positive.")]
-    public int Quantity { get; set; }
+    [Column(TypeName = "decimal(5, 2)")]
+    [Range(0, 999.99, ErrorMessage = "Value for {0} must be between 0 and 999.99")]
+    public decimal Quantity { get; set; }
 }

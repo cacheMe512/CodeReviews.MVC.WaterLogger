@@ -27,7 +27,7 @@ public static class SeedData
                 new DrinkingWaterModel
                 {
                     Date = DateTime.Parse("2025-3-25 12:15:12 PM"),
-                    Quantity = 2
+                    Quantity = 2.25M
                 },
 
                 new DrinkingWaterModel
@@ -45,7 +45,7 @@ public static class SeedData
                 new DrinkingWaterModel
                 {
                     Date = DateTime.Parse("2025-3-22 12:15:12 PM"),
-                    Quantity = 1
+                    Quantity = 1.50M
                 }
             );
             context.SaveChanges();
