@@ -1,5 +1,6 @@
 ﻿@page
 @model WaterLogger.cacheMe512.Pages.DrinkingWater.DeleteModel
+@using WaterLogger.cacheMe512.Helpers
 
 @{
     ViewData["Title"] = "Delete";
@@ -22,6 +23,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DrinkingWaterModel.Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            Measure
+        </dt>
+        <dd class="col-sm-10">
+            @MeasureOptions.GetDisplayLabel(Model.DrinkingWaterModel.Measure)
         </dd>
     </dl>
     

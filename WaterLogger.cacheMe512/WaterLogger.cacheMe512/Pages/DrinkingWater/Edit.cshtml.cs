@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WaterLogger.cacheMe512.Models;
 
@@ -17,6 +18,9 @@ public class EditModel : PageModel
     [BindProperty]
     public DrinkingWaterModel DrinkingWaterModel { get; set; } = default!;
 
+    public List<SelectListItem> MeasureOptions { get; set; } = new();
+
+
     public async Task<IActionResult> OnGetAsync(int? id)
     {
         if (id == null)
@@ -30,6 +34,7 @@ public class EditModel : PageModel
             return NotFound();
         }
         DrinkingWaterModel = drinkingwatermodel;
+        MeasureOptions = Helpers.MeasureOptions.GetMeasureOptions();
         return Page();
     }
 
@@ -39,6 +44,7 @@ public class EditModel : PageModel
     {
         if (!ModelState.IsValid)
         {
+            MeasureOptions = Helpers.MeasureOptions.GetMeasureOptions();
             return Page();
         }
 

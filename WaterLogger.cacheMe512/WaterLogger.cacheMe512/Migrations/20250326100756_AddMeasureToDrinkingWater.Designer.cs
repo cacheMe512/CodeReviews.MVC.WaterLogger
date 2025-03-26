@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WaterLogger.cacheMe512.Data;
 
@@ -11,9 +12,11 @@ using WaterLogger.cacheMe512.Data;
 namespace WaterLogger.cacheMe512.Migrations
 {
     [DbContext(typeof(WaterLoggerContext))]
-    partial class WaterLoggerContextModelSnapshot : ModelSnapshot
+    [Migration("20250326100756_AddMeasureToDrinkingWater")]
+    partial class AddMeasureToDrinkingWater
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
