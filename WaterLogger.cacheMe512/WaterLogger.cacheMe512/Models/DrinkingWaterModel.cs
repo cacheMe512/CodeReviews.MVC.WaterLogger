@@ -14,8 +14,10 @@ public class DrinkingWaterModel
 {
     public int Id { get; set; }
 
-    [DisplayFormat(DataFormatString = "{0:dd-MMM-yy}", ApplyFormatInEditMode = true)]
+    [DataType(DataType.Date)]
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
     public DateTime Date { get; set; }
+
 
     [Column(TypeName = "decimal(5, 2)")]
     [Range(0, 999.99, ErrorMessage = "Value for {0} must be between 0 and 999.99")]
